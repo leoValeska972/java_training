@@ -66,11 +66,6 @@
         id="hibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
-    <!-- locale resolver -->
-    <bean id="localeResolver"
-        class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-        <property name="defaultLocale" value="en" />
-    </bean>
 
     <!-- spring tiles -->
     <bean id="viewResolver"
