@@ -31,7 +31,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     private SessionFactory sessionFactory;
 
     /**
-     * <h2>addEmployee</h2>
+     * <h2>dbAddEmployee</h2>
      * <p>
      * Insert Employee
      * </p>
@@ -39,13 +39,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
      * @param employee Employee
      */
     @Override
-    public void addEmployee(Employee employee) {
+    public void dbAddEmployee(Employee employee) {
         Session session = sessionFactory.getCurrentSession();
         session.persist(employee);
     }
 
     /**
-     * <h2>updateEmployee</h2>
+     * <h2>dbUpdateEmployee</h2>
      * <p>
      * Update Employee
      * </p>
@@ -53,13 +53,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
      * @param employee Employee
      */
     @Override
-    public void updateEmployee(Employee employee) {
+    public void dbUpdateEmployee(Employee employee) {
         Session session = sessionFactory.getCurrentSession();
         session.update(employee);
     }
 
     /**
-     * <h2>listEmployees</h2>
+     * <h2>dbListEmployees</h2>
      * <p>
      * List All Employees
      * </p>
@@ -68,14 +68,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
      */
     @SuppressWarnings("unchecked")
     @Override
-    public List<Employee> listEmployees() {
+    public List<Employee> dbListEmployees() {
         Session session = sessionFactory.getCurrentSession();
         List<Employee> EmployeesList = session.createQuery("from Employee").list();
         return EmployeesList;
     }
 
     /**
-     * <h2>getEmployeeById</h2>
+     * <h2>dbGetEmployeeById</h2>
      * <p>
      * Get Employee ID
      * </p>
@@ -85,14 +85,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
      */
     @SuppressWarnings("removal")
     @Override
-    public Employee getEmployeeById(int id) {
+    public Employee dbGetEmployeeById(int id) {
         Session session = sessionFactory.getCurrentSession();
         Employee employee = (Employee) session.get(Employee.class, new Integer(id));
         return employee;
     }
 
     /**
-     * <h2>removeEmployee</h2>
+     * <h2>dbDeleteEmployee</h2>
      * <p>
      * Delete Employee
      * </p>
@@ -101,7 +101,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
      */
     @SuppressWarnings("removal")
     @Override
-    public void deleteEmployee(int id) {
+    public void dbDeleteEmployee(int id) {
         Session session = sessionFactory.getCurrentSession();
         Employee employee = (Employee) session.get(Employee.class, new Integer(id));
         if (null != employee) {

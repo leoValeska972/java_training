@@ -37,7 +37,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     /**
-     * <h2>listemployees</h2>
+     * <h2>listEmployees</h2>
      * <p>
      * List All Employees
      * </p>
@@ -50,12 +50,12 @@ public class EmployeeController {
     public ModelAndView listEmployees(Model model) {
         ModelAndView mv = new ModelAndView("emp");
         model.addAttribute("employee", new Employee());
-        model.addAttribute("employeeList", employeeService.listEmployees());
+        model.addAttribute("employeeList", employeeService.doListEmployees());
         return mv;
     }
 
     /**
-     * <h2>addemployee</h2>
+     * <h2>addEmployee</h2>
      * <p>
      * Insert or Update Employee
      * </p>
@@ -73,20 +73,20 @@ public class EmployeeController {
         if (br.hasErrors()) {
             mv.setViewName("emp");
             model.addAttribute("employee", employee);
-            model.addAttribute("employeeList", employeeService.listEmployees());
+            model.addAttribute("employeeList", employeeService.doListEmployees());
             return mv;
         }
         if (employee.getEid() == null || employee.getEid() == 0) {
-            employeeService.addEmployee(employee);
+            employeeService.doAddEmployee(employee);
         } else {
-            employeeService.updateEmployee(employee);
+            employeeService.doUpdateEmployee(employee);
         }
         mv.setViewName("redirect:/employees");
         return mv;
     }
 
     /**
-     * <h2>removeemployee</h2>
+     * <h2>deleteEmployee</h2>
      * <p>
      * Delete Employee
      * </p>
@@ -97,12 +97,12 @@ public class EmployeeController {
      */
     @RequestMapping("/deleteEmployee/{id}")
     public String deleteEmployee(@PathVariable("id") int id) {
-        employeeService.deleteEmployee(id);
+        employeeService.doDeleteEmployee(id);
         return "redirect:/employees";
     }
 
     /**
-     * <h2>editemployee</h2>
+     * <h2>editEmployee</h2>
      * <p>
      * Edit Employee
      * </p>
@@ -115,8 +115,8 @@ public class EmployeeController {
     @RequestMapping("/editEmployee/{id}")
     public ModelAndView editEmployee(@PathVariable("id") int id, Model model) {
         ModelAndView mv = new ModelAndView("emp");
-        model.addAttribute("employee", employeeService.getEmployeeById(id));
-        model.addAttribute("employeeList", employeeService.listEmployees());
+        model.addAttribute("employee", employeeService.doGetEmployeeById(id));
+        model.addAttribute("employeeList", employeeService.doListEmployees());
         return mv;
     }
 }

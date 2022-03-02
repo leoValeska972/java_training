@@ -14,20 +14,19 @@ import ojt.employee.crud.model.Employee;
  *
  */
 public interface EmployeeDAO {
-
     /**
-     * <h2>addEmployee</h2>
+     * <h2>dbAddEmployee</h2>
      * <p>
-     * Insert Employee
+     * Add Employee
      * </p>
      *
      * @param employee Employee
      * @return void
      */
-    public void addEmployee(Employee employee);
+    public void dbAddEmployee(Employee employee);
 
     /**
-     * <h2>updateEmployee</h2>
+     * <h2>dbUpdateEmployee</h2>
      * <p>
      * Update Employee
      * </p>
@@ -35,10 +34,10 @@ public interface EmployeeDAO {
      * @param employee Employee
      * @return void
      */
-    public void updateEmployee(Employee employee);
+    public void dbUpdateEmployee(Employee employee);
 
     /**
-     * <h2>getEmployeeById</h2>
+     * <h2>dbGetEmployeeById</h2>
      * <p>
      * Get Employee ID
      * </p>
@@ -47,10 +46,10 @@ public interface EmployeeDAO {
      * @return
      * @return Employee
      */
-    public Employee getEmployeeById(int id);
+    public Employee dbGetEmployeeById(int id);
 
     /**
-     * <h2>removeEmployee</h2>
+     * <h2>dbDeleteEmployee</h2>
      * <p>
      * Delete Employee
      * </p>
@@ -58,10 +57,10 @@ public interface EmployeeDAO {
      * @param id int
      * @return void
      */
-    public void deleteEmployee(int id);
+    public void dbDeleteEmployee(int id);
 
     /**
-     * <h2>listEmployees</h2>
+     * <h2>dbListEmployees</h2>
      * <p>
      * List All Employees
      * </p>
@@ -69,6 +68,5 @@ public interface EmployeeDAO {
      * @return
      * @return List<Employee>
      */
-    public List<Employee> listEmployees();
-
+    public List<Employee> dbListEmployees();
 }

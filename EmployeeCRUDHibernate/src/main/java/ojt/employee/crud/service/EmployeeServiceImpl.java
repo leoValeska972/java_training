@@ -45,7 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     /**
-     * <h2>addEmployee</h2>
+     * <h2>doAddEmployee</h2>
      * <p>
      * Insert Employee
      * </p>
@@ -53,12 +53,12 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param employee Employee
      */
     @Override
-    public void addEmployee(Employee employee) {
-        employeeDAO.addEmployee(employee);
+    public void doAddEmployee(Employee employee) {
+        employeeDAO.dbAddEmployee(employee);
     }
 
     /**
-     * <h2>updateEmployee</h2>
+     * <h2>doUpdateEmployee</h2>
      * <p>
      * Update Employee
      * </p>
@@ -66,12 +66,12 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param employeeEmployee
      */
     @Override
-    public void updateEmployee(Employee employee) {
-        employeeDAO.updateEmployee(employee);
+    public void doUpdateEmployee(Employee employee) {
+        employeeDAO.dbUpdateEmployee(employee);
     }
 
     /**
-     * <h2>listEmployees</h2>
+     * <h2>doListEmployees</h2>
      * <p>
      * List All Employees
      * </p>
@@ -79,12 +79,12 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @return List<Employee>
      */
     @Override
-    public List<Employee> listEmployees() {
-        return this.employeeDAO.listEmployees();
+    public List<Employee> doListEmployees() {
+        return this.employeeDAO.dbListEmployees();
     }
 
     /**
-     * <h2>getEmployeeById</h2>
+     * <h2>doGetEmployeeById</h2>
      * <p>
      * Get Employee ID
      * </p>
@@ -93,12 +93,12 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @return
      */
     @Override
-    public Employee getEmployeeById(int id) {
-        return employeeDAO.getEmployeeById(id);
+    public Employee doGetEmployeeById(int id) {
+        return employeeDAO.dbGetEmployeeById(id);
     }
 
     /**
-     * <h2>removeEmployee</h2>
+     * <h2>doDeleteEmployee</h2>
      * <p>
      * Delete Employee
      * </p>
@@ -106,7 +106,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param id int
      */
     @Override
-    public void deleteEmployee(int id) {
-        employeeDAO.deleteEmployee(id);
+    public void doDeleteEmployee(int id) {
+        employeeDAO.dbDeleteEmployee(id);
     }
 }
