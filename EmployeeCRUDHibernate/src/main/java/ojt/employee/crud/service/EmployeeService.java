@@ -27,7 +27,7 @@ public interface EmployeeService {
     public void doAddEmployee(Employee employee);
 
     /**
-     * <h2>dbUpdateEmployee</h2>
+     * <h2>doUpdateEmployee</h2>
      * <p>
      * Update Employee
      * </p>
