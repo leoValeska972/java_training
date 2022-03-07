@@ -1,4 +1,4 @@
-package ojt.employee.app.bl.service.employee;
+package ojt.employee.app.bl.service;
 
 import java.util.List;
 

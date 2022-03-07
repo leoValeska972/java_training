@@ -1,4 +1,4 @@
-package ojt.employee.app.bl.service.employee.impl;
+package ojt.employee.app.bl.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ojt.employee.app.bl.dto.EmployeeDTO;
-import ojt.employee.app.bl.service.employee.EmployeeService;
-import ojt.employee.app.persistence.dao.employee.EmployeeDao;
+import ojt.employee.app.bl.service.EmployeeService;
+import ojt.employee.app.persistence.dao.EmployeeDao;
 import ojt.employee.app.persistence.entity.Employee;
 import ojt.employee.app.web.form.EmployeeForm;
 
@@ -34,19 +34,6 @@ public class EmployeeServiceImpl implements EmployeeService {
      */
     @Autowired
     private EmployeeDao employeeDao;
-
-    /**
-     * <h2>setemployeeDAO</h2>
-     * <p>
-     * set EmployeeDao
-     * </p>
-     *
-     * @param employeeDao EmployeeDAO
-     * @return void
-     */
-    public void setemployeeDao(EmployeeDao employeeDao) {
-        this.employeeDao = employeeDao;
-    }
 
     /**
      * <h2>doAddEmployee</h2>

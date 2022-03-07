@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import ojt.employee.app.bl.service.employee.EmployeeService;
+import ojt.employee.app.bl.service.EmployeeService;
 import ojt.employee.app.web.form.EmployeeForm;
 
 /**

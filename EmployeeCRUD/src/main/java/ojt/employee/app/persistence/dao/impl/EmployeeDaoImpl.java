@@ -1,4 +1,4 @@
-package ojt.employee.app.persistence.dao.employee.impl;
+package ojt.employee.app.persistence.dao.impl;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import ojt.employee.app.persistence.dao.employee.EmployeeDao;
+import ojt.employee.app.persistence.dao.EmployeeDao;
 import ojt.employee.app.persistence.entity.Employee;
 
 /**
@@ -30,6 +30,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
      */
     @Autowired
     private SessionFactory sessionFactory;
+
+    /**
+     * <h2>SELECT_STUDENT_HQL</h2>
+     * <p>
+     * SELECT_STUDENT_HQL
+     * </p>
+     */
+    private static final String SELECT_EMPLOYEE_HQL = "SELECT " + "e " + "FROM Employee e ";
 
     /**
      * <h2>dbAddEmployee</h2>
@@ -56,9 +64,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @SuppressWarnings("unchecked")
     @Override
     public List<Employee> dbListEmployees() {
-        Session session = sessionFactory.getCurrentSession();
-        List<Employee> EmployeesList = session.createQuery("from Employee").list();
-        return EmployeesList;
+        return this.sessionFactory.getCurrentSession().createQuery(SELECT_EMPLOYEE_HQL).list();
     }
 
     /**

@@ -1,10 +1,6 @@
 package ojt.employee.app.web.form;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 
 import org.springframework.stereotype.Component;
 
@@ -35,6 +31,7 @@ public class EmployeeForm {
      */
     @NotEmpty
     @Pattern(regexp = "^[a-zA-Z_ ]*$")
+    @Size(max = 30)
     private String ename;
 
     /**
@@ -56,6 +53,7 @@ public class EmployeeForm {
      */
     @NotEmpty
     @Pattern(regexp = "^[a-zA-Z_ ]*$")
+    @Size(max = 30)
     private String edept;
 
     /**
@@ -77,7 +75,7 @@ public class EmployeeForm {
      * Set Employee ID
      * </p>
      *
-     * @param eid
+     * @param eid Integer
      * @return void
      */
     public void setEid(Integer eid) {
@@ -103,7 +101,7 @@ public class EmployeeForm {
      * Set Employee Name
      * </p>
      *
-     * @param ename
+     * @param ename String
      * @return void
      */
     public void setEname(String ename) {
@@ -129,7 +127,7 @@ public class EmployeeForm {
      * Set Employee Age
      * </p>
      *
-     * @param eage
+     * @param eage Integer
      * @return void
      */
     public void setEage(Integer eage) {
@@ -155,7 +153,7 @@ public class EmployeeForm {
      * Set Employee Department
      * </p>
      *
-     * @param edept
+     * @param edept String
      * @return void
      */
     public void setEdept(String edept) {

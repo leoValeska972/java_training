@@ -78,7 +78,7 @@ public class Employee {
      * Set Employee ID
      * </p>
      *
-     * @param eid
+     * @param eid Integer
      * @return void
      */
     public void setEid(Integer eid) {
@@ -104,7 +104,7 @@ public class Employee {
      * Set Employee Name
      * </p>
      *
-     * @param ename
+     * @param ename String
      * @return void
      */
     public void setEname(String ename) {
@@ -130,7 +130,7 @@ public class Employee {
      * Set Employee Age
      * </p>
      *
-     * @param eage
+     * @param eage Integer
      * @return void
      */
     public void setEage(Integer eage) {
@@ -156,7 +156,7 @@ public class Employee {
      * Set Employee Department
      * </p>
      *
-     * @param edept
+     * @param edept String
      * @return void
      */
     public void setEdept(String edept) {

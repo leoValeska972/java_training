@@ -27,7 +27,5 @@
     <servlet-mapping>
         <servlet-name>SpringMVC</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping><session-config>
-   <session-timeout>15</session-timeout>
-</session-config>
+    </servlet-mapping>
 </web-app>

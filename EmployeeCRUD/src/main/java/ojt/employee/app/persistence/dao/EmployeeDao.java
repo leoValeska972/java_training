@@ -1,4 +1,4 @@
-package ojt.employee.app.persistence.dao.employee;
+package ojt.employee.app.persistence.dao;
 
 import java.util.List;
 
