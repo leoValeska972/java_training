@@ -1,0 +1,6 @@
+ojt\bookstore\app\persistence\dao\user\impl\UserDaoImpl.class
+ojt\bookstore\app\web\form\UserForm.class
+ojt\bookstore\app\bl\service\user\impl\UserServiceImpl.class
+ojt\bookstore\app\persistence\entity\User.class
+ojt\bookstore\app\bl\dto\UserDTO.class
+ojt\bookstore\app\web\controller\user\UserController.class

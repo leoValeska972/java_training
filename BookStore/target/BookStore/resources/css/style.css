@@ -1,0 +1,48 @@
+body {
+  text-align: center;
+}
+
+.tmenu {
+  float: left;
+  padding: 10px;
+  width: 15%;
+  border-right: 1px solid pink;
+}
+
+.main-container {
+  float: left;
+  padding: 10px;
+  width: 80%;
+}
+
+#footer {
+  clear: both;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.menu {
+  padding: 13px;
+  display: block;
+  text-decoration: none;
+  background-color: #87CEEB;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #4169E1;
+}
+
+h1 {
+  color: #5579C6;
+}
+
+li {
+  list-style-type: none;
+}
+
+h2 {
+  color: #2C3E4C;
+}
+
+p {
+  color: #59788E;
+}

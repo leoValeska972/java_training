@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <!-- body that will be in template -->
+    <definition name="book" extends="tiles">
+        <put-attribute name="body"
+            value="/WEB-INF/pages/book/book.jsp" />
+    </definition>
+
+    <definition name="sellbook" extends="tiles">
+        <put-attribute name="body"
+            value="/WEB-INF/pages/book/sellbook.jsp" />
+    </definition>
+</tiles-definitions>
+

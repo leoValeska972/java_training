@@ -1,0 +1,49 @@
+body {
+  text-align: center;
+}
+
+.tmenu {
+  float: left;
+  padding: 10px;
+  width: 15%;
+}
+
+.main-container {
+  float: left;
+  padding: 10px;
+  width: 80%;
+  border-left: 1px solid pink;
+}
+
+#footer {
+  clear: both;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.menu {
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+  background-color: #87CEEB;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #4169E1;
+}
+
+.ttl {
+  color: #5579C6;
+}
+
+.error {
+  color: red;
+}
+
+.tbl {
+  width: 45% !important;
+  margin: 0 auto;
+}
+
+.textb {
+  width: 80%;
+}
