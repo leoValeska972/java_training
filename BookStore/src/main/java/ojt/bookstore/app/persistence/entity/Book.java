@@ -76,7 +76,7 @@ public class Book {
      * </p>
      */
     @Column(name = "ISBN")
-    private String bisbn;
+    private Integer bisbn;
     /**
      * <h2>bquan</h2>
      * <p>

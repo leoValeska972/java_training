@@ -47,3 +47,7 @@ body {
 .textb {
   width: 80%;
 }
+
+input[type=file] {
+  display: inline-block !important;
+}

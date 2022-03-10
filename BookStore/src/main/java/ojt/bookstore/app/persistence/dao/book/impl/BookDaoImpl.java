@@ -29,6 +29,7 @@ public class BookDaoImpl implements BookDao {
      */
     @Autowired
     private SessionFactory sessionFactory;
+
     /**
      * <h2>SELECT_BOOK_HQL</h2>
      * <p>
@@ -36,6 +37,8 @@ public class BookDaoImpl implements BookDao {
      * </p>
      */
     private static final String SELECT_BOOK_HQL = "SELECT " + "b " + "FROM Book b ";
+
+    private static final String UPDATE_BOOK_QUANTITY_HQL = "UPDATE Book set Quantity = :quan  where id = :bid";
 
     /**
      * <h2>dbAddBook</h2>
@@ -107,7 +110,7 @@ public class BookDaoImpl implements BookDao {
      */
     @Override
     public void dbUpdateQuan(int id, int quan) {
-        sessionFactory.getCurrentSession().createQuery("UPDATE Book set Quantity=" + quan + " where id=" + id)
-                .executeUpdate();
+        sessionFactory.getCurrentSession().createQuery(UPDATE_BOOK_QUANTITY_HQL).setParameter("quan", quan)
+                .setParameter("bid", id).executeUpdate();
     }
 }

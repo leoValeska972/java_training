@@ -1,5 +1,7 @@
 package ojt.bookstore.app.web.controller.book;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import ojt.bookstore.app.bl.service.book.BookService;
@@ -117,6 +121,42 @@ public class BookController {
     public ModelAndView editBook(@PathVariable("id") int id) {
         ModelAndView mv = new ModelAndView("book");
         mv.addObject("bookForm", bookService.doGetBookById(id));
+        mv.addObject("bookList", bookService.doListBooks());
+        return mv;
+    }
+
+    /**
+     * <h2>downloadBook</h2>
+     * <p>
+     * Download Book Lists
+     * </p>
+     *
+     * @param response HttpServletResponse
+     * @return
+     * @throws IOException
+     * @return ModelAndView
+     */
+    @RequestMapping(value = "/download", method = RequestMethod.GET)
+    public void downloadBook() throws IOException {
+        bookService.doDownloadBook();
+    }
+
+    /**
+     * <h2>uploadBook</h2>
+     * <p>
+     * Upload Book File
+     * </p>
+     *
+     * @param file MultipartFile
+     * @return
+     * @throws IOException
+     * @return ModelAndView
+     */
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    public ModelAndView uploadBook(@RequestParam("file") MultipartFile file) throws IOException {
+        ModelAndView mv = new ModelAndView("book");
+        mv.addObject("fileErrMsg", bookService.doUploadBook(file));
+        mv.addObject("bookForm", new BookForm());
         mv.addObject("bookList", bookService.doListBooks());
         return mv;
     }

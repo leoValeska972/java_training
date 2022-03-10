@@ -71,6 +71,17 @@
       </table>
     </div>
   </form:form>
+
+  <h6>${fileErrMsg}</h6>
+  <c:remove var="fileErrMsg" />
+  <h6 class="download"></h6>
+  <p>
+    <a href="<c:url value='download' />" class="down">Download</a>
+  </p>
+  <form action="upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" /><br> <br> <input
+      type="submit" value="Submit" />
+  </form>
   <br>
   <hr>
   <br>
@@ -110,7 +121,10 @@
 
   <script type="text/javascript">
             $(document).ready(function() {
-                $('h6').delay(2000).fadeOut();
+                $(".down").click(function() {
+                    $(".download").text("Download Successful");
+                });
+                $("h6").delay(2000).fadeOut();
             });
         </script>
 </body>

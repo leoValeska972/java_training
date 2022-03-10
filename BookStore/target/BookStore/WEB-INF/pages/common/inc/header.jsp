@@ -1,2 +1,3 @@
 <!-- header -->
-<h1>Library Management System</h1><br>
+<h1 class="ttl">Bookstore POS System</h1>
+<br>

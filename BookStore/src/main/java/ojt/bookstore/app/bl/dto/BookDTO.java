@@ -54,13 +54,7 @@ public class BookDTO {
      * bisbn
      * </p>
      */
-    private String bisbn;
-    /**
-     * <h2>bquan</h2>
-     * <p>
-     * bquan
-     * </p>
-     */
+    private Integer bisbn;
     /**
      * <h2>bquan</h2>
      * <p>

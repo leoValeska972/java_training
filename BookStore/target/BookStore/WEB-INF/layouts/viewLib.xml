@@ -4,21 +4,14 @@
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
     <!-- body that will be in template -->
-    <definition name="lib" extends="tiles">
-        <put-attribute name="body"
-            value="/WEB-INF/pages/library/libraryMS.jsp" />
-    </definition>
-    <definition name="user" extends="tiles">
-        <put-attribute name="body"
-            value="/WEB-INF/pages/user/user.jsp" />
-    </definition>
-    <definition name="issbook" extends="tiles">
-        <put-attribute name="body"
-            value="/WEB-INF/pages/book/issueBook.jsp" />
-    </definition>
     <definition name="book" extends="tiles">
         <put-attribute name="body"
             value="/WEB-INF/pages/book/book.jsp" />
+    </definition>
+
+    <definition name="sellbook" extends="tiles">
+        <put-attribute name="body"
+            value="/WEB-INF/pages/book/sellbook.jsp" />
     </definition>
 </tiles-definitions>
 

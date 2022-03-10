@@ -19,7 +19,6 @@
     <!-- base package -->
     <context:component-scan
         base-package="ojt.bookstore.app" />
-
     <!-- folder path for CSS, JS, Images -->
     <mvc:resources mapping="/resources/**"
         location="/resources/" />
@@ -76,7 +75,6 @@
         id="hibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
-
     <!-- spring tiles -->
     <bean id="viewResolver"
         class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">

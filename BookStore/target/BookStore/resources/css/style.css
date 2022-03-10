@@ -6,13 +6,13 @@ body {
   float: left;
   padding: 10px;
   width: 15%;
-  border-right: 1px solid pink;
 }
 
 .main-container {
   float: left;
   padding: 10px;
   width: 80%;
+  border-left: 1px solid pink;
 }
 
 #footer {
@@ -22,7 +22,7 @@ body {
 }
 
 .menu {
-  padding: 13px;
+  padding: 20px;
   display: block;
   text-decoration: none;
   background-color: #87CEEB;
@@ -31,18 +31,19 @@ body {
   color: #4169E1;
 }
 
-h1 {
+.ttl {
   color: #5579C6;
 }
 
-li {
-  list-style-type: none;
+.error {
+  color: red;
 }
 
-h2 {
-  color: #2C3E4C;
+.tbl {
+  width: 45% !important;
+  margin: 0 auto;
 }
 
-p {
-  color: #59788E;
+.textb {
+  width: 80%;
 }

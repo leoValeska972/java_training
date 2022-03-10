@@ -67,7 +67,7 @@ public class BookForm {
      * </p>
      */
     @NotNull
-    private String bisbn;
+    private Integer bisbn;
     /**
      * <h2>bquan</h2>
      * <p>

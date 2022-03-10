@@ -1,6 +1,9 @@
 package ojt.bookstore.app.bl.service.book;
 
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import ojt.bookstore.app.bl.dto.BookDTO;
 import ojt.bookstore.app.web.form.BookForm;
@@ -59,4 +62,28 @@ public interface BookService {
      * @return void
      */
     public void doUpdateBook(BookForm bookForm);
+
+    /**
+     * <h2>doDownloadBook</h2>
+     * <p>
+     * Download Book Lists
+     * </p>
+     *
+     * @throws IOException
+     * @return void
+     */
+    public void doDownloadBook() throws IOException;
+
+    /**
+     * <h2>doUploadBook</h2>
+     * <p>
+     * Upload Book File
+     * </p>
+     *
+     * @param file MultipartFile
+     * @return
+     * @throws IOException
+     * @return String
+     */
+    public String doUploadBook(MultipartFile file) throws IOException;
 }
