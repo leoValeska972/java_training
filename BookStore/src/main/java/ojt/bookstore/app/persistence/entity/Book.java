@@ -93,6 +93,9 @@ public class Book {
      */
     @Column(name = "Price")
     private Integer bprice;
+    
+    @Column(name="Flag")
+    private Integer flag;
 
     /**
      * <h2>Constructor for Book</h2>

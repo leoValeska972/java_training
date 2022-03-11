@@ -46,15 +46,6 @@ public class BookServiceImpl implements BookService {
     private BookDao bookDao;
 
     /**
-     * <h2>response</h2>
-     * <p>
-     * response
-     * </p>
-     */
-    @Autowired
-    private HttpServletResponse response;
-
-    /**
      * <h2>doAddBook</h2>
      * <p>
      * Add New Book
@@ -65,6 +56,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public void doAddBook(BookForm bookForm) {
         Book book = new Book(bookForm);
+        book.setFlag(1);
         bookDao.dbAddBook(book);
     }
 
@@ -113,7 +105,21 @@ public class BookServiceImpl implements BookService {
     @Override
     public void doUpdateBook(BookForm bookForm) {
         Book book = new Book(bookForm);
+        book.setFlag(1);
         bookDao.dbUpdateBook(book);
+    }
+
+    /**
+     * <h2>doDeleteBook</h2>
+     * <p>
+     * Delete Book
+     * </p>
+     * 
+     * @param id
+     */
+    @Override
+    public void doDeleteBook(int id) {
+        bookDao.dbDeleteBook(id);
     }
 
     /**
@@ -125,7 +131,7 @@ public class BookServiceImpl implements BookService {
      * @throws IOException
      */
     @Override
-    public void doDownloadBook() throws IOException {
+    public void doDownloadBook(HttpServletResponse response) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Book Stocks");
         String fileName = "books.xlsx";
@@ -210,6 +216,7 @@ public class BookServiceImpl implements BookService {
             book.setBquan((int) cellQuantity.getNumericCellValue());
             Cell cellPrice = row.getCell(6);
             book.setBprice((int) cellPrice.getNumericCellValue());
+            book.setFlag(1);
             bookDao.dbAddBook(book);
         }
         return "File Upload Successful";

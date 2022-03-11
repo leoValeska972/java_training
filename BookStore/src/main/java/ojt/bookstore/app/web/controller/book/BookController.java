@@ -2,6 +2,7 @@ package ojt.bookstore.app.web.controller.book;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -126,6 +127,23 @@ public class BookController {
     }
 
     /**
+     * <h2>deleteBook</h2>
+     * <p>
+     * Delete Book
+     * </p>
+     *
+     * @param id int
+     * @return
+     * @return String
+     */
+    @RequestMapping("/deleteBook/{id}")
+    public String deleteBook(@PathVariable("id") int id) {
+        session.setAttribute("errorMsg", this.messageSource.getMessage("M_SC_0002", null, null));
+        bookService.doDeleteBook(id);
+        return "redirect:/books";
+    }
+
+    /**
      * <h2>downloadBook</h2>
      * <p>
      * Download Book Lists
@@ -137,8 +155,8 @@ public class BookController {
      * @return ModelAndView
      */
     @RequestMapping(value = "/download", method = RequestMethod.GET)
-    public void downloadBook() throws IOException {
-        bookService.doDownloadBook();
+    public void downloadBook(HttpServletResponse response) throws IOException {
+        bookService.doDownloadBook(response);
     }
 
     /**

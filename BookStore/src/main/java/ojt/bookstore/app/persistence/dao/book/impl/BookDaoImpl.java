@@ -36,9 +36,17 @@ public class BookDaoImpl implements BookDao {
      * SELECT_BOOK_HQL
      * </p>
      */
-    private static final String SELECT_BOOK_HQL = "SELECT " + "b " + "FROM Book b ";
+    private static final String SELECT_BOOK_HQL = "SELECT " + "b " + "FROM Book b WHERE b.flag = 1 ";
 
+    /**
+     * <h2>UPDATE_BOOK_QUANTITY_HQL</h2>
+     * <p>
+     * UPDATE_BOOK_QUANTITY_HQL
+     * </p>
+     */
     private static final String UPDATE_BOOK_QUANTITY_HQL = "UPDATE Book set Quantity = :quan  where id = :bid";
+
+    private static final String DELETE_BOOK_HQL = "UPDATE Book set Flag = 0  where id = :bid";
 
     /**
      * <h2>dbAddBook</h2>
@@ -112,5 +120,19 @@ public class BookDaoImpl implements BookDao {
     public void dbUpdateQuan(int id, int quan) {
         sessionFactory.getCurrentSession().createQuery(UPDATE_BOOK_QUANTITY_HQL).setParameter("quan", quan)
                 .setParameter("bid", id).executeUpdate();
+    }
+
+    /**
+     * <h2>dbDeleteBook</h2>
+     * <p>
+     * Delete Book
+     * </p>
+     * 
+     * @param id int
+     */
+    @Override
+    public void dbDeleteBook(int id) {
+        sessionFactory.getCurrentSession().createQuery(DELETE_BOOK_HQL).setParameter("bid", id).executeUpdate();
+
     }
 }

@@ -71,14 +71,17 @@
       </table>
     </div>
   </form:form>
+
+  <h6>${fileErrMsg}</h6>
+  <c:remove var="fileErrMsg" />
+  <h6 class="download"></h6>
   <p>
-    <a href="<c:url value='download' />">Download</a>
+    <a href="<c:url value='download' />" class="down">Download</a>
   </p>
-  <form:form action="upload" method="post" enctype="multipart/form-data"
-    modelAttribute="fileUploadForm">
-    <form:input type="file" path="file"/>
-    <input type="submit" value="Submit" />
-  </form:form>
+  <form action="upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" /><br> <br> <input
+      type="submit" value="Submit" />
+  </form>
   <br>
   <hr>
   <br>
@@ -98,6 +101,7 @@
         <th>Quantity</th>
         <th>Price</th>
         <th>Edit</th>
+        <th>Delete</th>
       </tr>
       <!-- looping and print out all the data -->
       <c:forEach items="${bookList}" var="book">
@@ -111,6 +115,8 @@
           <td align="right">${book.bprice}</td>
           <td align="center"><a
             href="<c:url value='editBook/${book.bid}' />">Edit</a></td>
+          <td align="center"><a
+            href="<c:url value='deleteBook/${book.bid}' />">Delete</a></td>
         </tr>
       </c:forEach>
     </table>
@@ -118,7 +124,10 @@
 
   <script type="text/javascript">
             $(document).ready(function() {
-                $('h6').delay(2000).fadeOut();
+                $(".down").click(function() {
+                    $(".download").text("Download Successful");
+                });
+                $("h6").delay(2000).fadeOut();
             });
         </script>
 </body>

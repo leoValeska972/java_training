@@ -9,5 +9,7 @@
             class="ojt.bookstore.app.persistence.entity.Book" />
         <mapping
             class="ojt.bookstore.app.persistence.entity.SellBook" />
+        <mapping
+            class="ojt.bookstore.app.persistence.entity.User" />
     </session-factory>
 </hibernate-configuration>

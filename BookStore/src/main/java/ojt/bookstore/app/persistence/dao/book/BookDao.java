@@ -61,4 +61,15 @@ public interface BookDao {
      * @return void
      */
     public void dbUpdateQuan(int id, int quan);
+
+    /**
+     * <h2>dbDeleteBook</h2>
+     * <p>
+     * Delete Book
+     * </p>
+     *
+     * @param id int
+     * @return void
+     */
+    public void dbDeleteBook(int id);
 }

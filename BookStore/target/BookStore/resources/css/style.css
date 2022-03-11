@@ -31,6 +31,16 @@ body {
   color: #4169E1;
 }
 
+.logout {
+  padding: 20px 71px;
+  display: block;
+  border: none;
+  background-color: #87CEEB;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #4169E1;
+}
+
 .ttl {
   color: #5579C6;
 }
@@ -46,4 +56,8 @@ body {
 
 .textb {
   width: 80%;
+}
+
+input[type=file] {
+  display: inline-block !important;
 }

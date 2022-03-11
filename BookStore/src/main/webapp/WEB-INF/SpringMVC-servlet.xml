@@ -89,8 +89,16 @@
             </list>
         </property>
     </bean>
-    
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <!-- multipart file -->
+    <bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="20971520" />
     </bean>
+    <!-- password encrypt -->
+    <bean id="bCryptPasswordEncoder"
+        class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+    </bean>
+    <!--user service -->
+    <bean id="userService"
+        class="ojt.bookstore.app.bl.service.user.impl.UserServiceImpl"></bean>
 </beans>

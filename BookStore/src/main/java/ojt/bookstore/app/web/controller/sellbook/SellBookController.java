@@ -104,4 +104,18 @@ public class SellBookController {
         mv.addObject("sbList", sbService.doListSellBooks());
         return mv;
     }
+
+    /**
+     * <h2>error</h2>
+     * <p>
+     * Login Error
+     * </p>
+     *
+     * @return
+     * @return String
+     */
+    @RequestMapping(value = "/error")
+    public String error() {
+        return "book/access-denied";
+    }
 }
