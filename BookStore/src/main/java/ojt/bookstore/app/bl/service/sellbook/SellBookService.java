@@ -21,10 +21,10 @@ public interface SellBookService {
      * Add New Sold Book
      * </p>
      *
-     * @param sbFrom SellBookForm
+     * @param sellBookForm SellBookForm
      * @return void
      */
-    public void doAddSellBook(SellBookForm sbFrom);
+    public void doAddSellBook(SellBookForm sellBookForm);
 
     /**
      * <h2>doListSellBooks</h2>

@@ -30,13 +30,13 @@ import ojt.bookstore.app.web.form.SellBookForm;
 public class SellBookServiceImpl implements SellBookService {
 
     /**
-     * <h2>sbDao</h2>
+     * <h2>sellBookDao</h2>
      * <p>
-     * sbDao
+     * sellBookDao
      * </p>
      */
     @Autowired
-    private SellBookDao sbDao;
+    private SellBookDao sellBookDao;
 
     /**
      * <h2>bookDao</h2>
@@ -53,21 +53,21 @@ public class SellBookServiceImpl implements SellBookService {
      * Add New Sold Book
      * </p>
      * 
-     * @param sbForm SellBookForm
+     * @param sellBookForm SellBookForm
      */
     @Override
-    public void doAddSellBook(SellBookForm sbForm) {
-        SellBook sb = new SellBook(sbForm);
+    public void doAddSellBook(SellBookForm sellBookForm) {
+        SellBook sellBook = new SellBook(sellBookForm);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        sb.setSbdate(dtf.format(now));
-        int p = bookDao.dbGetBookById(sb.getBid()).getBprice();
-        int tp = p * sb.getSbquan();
-        sb.setSbtprice(tp);
-        int q = bookDao.dbGetBookById(sb.getBid()).getBquan();
-        int qua = q - sb.getSbquan();
-        bookDao.dbUpdateQuan(sb.getBid(), qua);
-        sbDao.dbAddSellBook(sb);
+        sellBook.setSellbdate(dtf.format(now));
+        int price = bookDao.dbGetBookById(sellBook.getBid()).getBprice();
+        int totalPrice = price * sellBook.getSellbquantity();
+        sellBook.setSellbtprice(totalPrice);
+        int quantity = bookDao.dbGetBookById(sellBook.getBid()).getBquantity();
+        int leftQuantity = quantity - sellBook.getSellbquantity();
+        bookDao.dbUpdateQuan(sellBook.getBid(), leftQuantity);
+        sellBookDao.dbAddSellBook(sellBook);
     }
 
     /**
@@ -81,11 +81,11 @@ public class SellBookServiceImpl implements SellBookService {
     @Override
     public List<SellBookDTO> doListSellBooks() {
         List<SellBookDTO> bookList = new ArrayList<SellBookDTO>();
-        for (SellBook sb : this.sbDao.dbListSellBooks()) {
-            SellBookDTO sbDto = new SellBookDTO(sb);
-            String bname = bookDao.dbGetBookById(sb.getBid()).getBname();
-            sbDto.setBname(bname);
-            bookList.add(sbDto);
+        for (SellBook sellBook : this.sellBookDao.dbListSellBooks()) {
+            SellBookDTO sellBookDto = new SellBookDTO(sellBook);
+            String bname = bookDao.dbGetBookById(sellBook.getBid()).getBname();
+            sellBookDto.setBname(bname);
+            bookList.add(sellBookDto);
         }
         return bookList;
     }
@@ -102,10 +102,10 @@ public class SellBookServiceImpl implements SellBookService {
      */
     @Override
     public int doCheckQuan(int id, int quan) {
-        int q = bookDao.dbGetBookById(id).getBquan();
-        int qua = q - quan;
-        if (qua >= 0) {
-            return qua;
+        int quantity = bookDao.dbGetBookById(id).getBquantity();
+        int leftQuantity = quantity - quan;
+        if (leftQuantity >= 0) {
+            return leftQuantity;
         } else {
             return -1;
         }
@@ -122,7 +122,7 @@ public class SellBookServiceImpl implements SellBookService {
      */
     @Override
     public int doGetQuan(int id) {
-        return bookDao.dbGetBookById(id).getBquan();
+        return bookDao.dbGetBookById(id).getBquantity();
     }
 
     /**

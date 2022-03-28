@@ -14,8 +14,6 @@
             access="hasAnyRole('Casher', 'Manager')" />
         <intercept-url pattern="/books"
             access="hasRole('Manager')" />
-        <intercept-url pattern="/upload"
-            access="hasRole('Manager')" />
         <form-login login-page="/login.jsp"
             login-processing-url="/login" username-parameter="username"
             password-parameter="password"

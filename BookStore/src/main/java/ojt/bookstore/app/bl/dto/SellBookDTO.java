@@ -26,7 +26,7 @@ public class SellBookDTO {
      * sbid
      * </p>
      */
-    private Integer sbid;
+    private Integer sellbid;
     /**
      * <h2>bid</h2>
      * <p>
@@ -47,21 +47,21 @@ public class SellBookDTO {
      * sbdate
      * </p>
      */
-    private String sbdate;
+    private String sellbdate;
     /**
      * <h2>sbquan</h2>
      * <p>
      * sbquan
      * </p>
      */
-    private Integer sbquan;
+    private Integer sellbquantity;
     /**
      * <h2>sbtprice</h2>
      * <p>
      * sbtprice
      * </p>
      */
-    private Integer sbtprice;
+    private Integer sellbtprice;
 
     /**
      * <h2>Constructor for SellBookDTO</h2>
@@ -71,12 +71,12 @@ public class SellBookDTO {
      * 
      * @param sb SellBook
      */
-    public SellBookDTO(SellBook sb) {
+    public SellBookDTO(SellBook sellBook) {
         super();
-        this.sbid = sb.getSbid();
-        this.bid = sb.getBid();
-        this.sbdate = sb.getSbdate();
-        this.sbquan = sb.getSbquan();
-        this.sbtprice = sb.getSbtprice();
+        this.sellbid = sellBook.getSellbid();
+        this.bid = sellBook.getBid();
+        this.sellbdate = sellBook.getSellbdate();
+        this.sellbquantity = sellBook.getSellbquantity();
+        this.sellbtprice = sellBook.getSellbtprice();
     }
 }

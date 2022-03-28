@@ -27,7 +27,7 @@ public class SellBookForm {
      * sbid
      * </p>
      */
-    private Integer sbid;
+    private Integer sellbid;
     /**
      * <h2>bid</h2>
      * <p>
@@ -42,7 +42,7 @@ public class SellBookForm {
      * sbdate
      * </p>
      */
-    private String sbdate;
+    private String sellbdate;
     /**
      * <h2>sbquan</h2>
      * <p>
@@ -50,12 +50,12 @@ public class SellBookForm {
      * </p>
      */
     @NotNull
-    private Integer sbquan;
+    private Integer sellbquantity;
     /**
      * <h2>sbtprice</h2>
      * <p>
      * sbtprice
      * </p>
      */
-    private Integer sbtprice;
+    private Integer sellbtprice;
 }

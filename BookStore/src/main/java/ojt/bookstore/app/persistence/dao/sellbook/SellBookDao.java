@@ -20,10 +20,10 @@ public interface SellBookDao {
      * Add Sold Book
      * </p>
      *
-     * @param sb SellBook
+     * @param sellBook SellBook
      * @return void
      */
-    public void dbAddSellBook(SellBook sb);
+    public void dbAddSellBook(SellBook sellBook);
 
     /**
      * <h2>dbListSellBooks</h2>
@@ -54,8 +54,8 @@ public interface SellBookDao {
      * Update Sold Book
      * </p>
      *
-     * @param sb SellBook
+     * @param sellBook SellBook
      * @return void
      */
-    public void dbUpdateSellBook(SellBook sb);
+    public void dbUpdateSellBook(SellBook sellBook);
 }

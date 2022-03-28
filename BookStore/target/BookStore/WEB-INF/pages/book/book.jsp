@@ -78,18 +78,18 @@
   <p>
     <a href="<c:url value='download' />" class="down">Download</a>
   </p>
-  <form action="upload" method="post" enctype="multipart/form-data">
+  <form action="upload?${_csrf.parameterName}=${_csrf.token}"
+    method="post" enctype="multipart/form-data">
     <input type="file" name="file" /><br> <br> <input
       type="submit" value="Submit" />
   </form>
   <br>
   <hr>
-  <br>
+  <h6>${errorMsg}</h6>
+  <c:remove var="errorMsg" />
   <!-- check if list is emply or not -->
   <c:if test="${not empty bookList}">
     <h2>Book List</h2>
-    <h6>${errorMsg}</h6>
-    <c:remove var="errorMsg" />
     <!-- table for showing data -->
     <table class="table table-bordered">
       <tr>

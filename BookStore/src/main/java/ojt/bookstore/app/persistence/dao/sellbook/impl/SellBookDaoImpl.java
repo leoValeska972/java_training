@@ -35,7 +35,7 @@ public class SellBookDaoImpl implements SellBookDao {
      * SELECT_SELLBOOK_HQL
      * </p>
      */
-    private static final String SELECT_SELLBOOK_HQL = "SELECT " + "sb " + "FROM SellBook sb ";
+    private static final String SELECT_SELLBOOK_HQL = "SELECT " + "sellBook " + "FROM SellBook sellBook ";
 
     /**
      * <h2>dbAddSellBook</h2>
@@ -43,12 +43,12 @@ public class SellBookDaoImpl implements SellBookDao {
      * Add Sold Book
      * </p>
      * 
-     * @param sb SellBook
+     * @param sellBook SellBook
      */
     @Override
-    public void dbAddSellBook(SellBook sb) {
+    public void dbAddSellBook(SellBook sellBook) {
         Session session = sessionFactory.getCurrentSession();
-        session.persist(sb);
+        session.persist(sellBook);
     }
 
     /**
@@ -78,8 +78,8 @@ public class SellBookDaoImpl implements SellBookDao {
     @Override
     public SellBook dbGetSellBookById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        SellBook sb = (SellBook) session.get(SellBook.class, new Integer(id));
-        return sb;
+        SellBook sellBook = (SellBook) session.get(SellBook.class, new Integer(id));
+        return sellBook;
     }
 
     /**
@@ -88,11 +88,11 @@ public class SellBookDaoImpl implements SellBookDao {
      * Update Sold Book
      * </p>
      * 
-     * @param sb SellBook
+     * @param sellBook SellBook
      */
     @Override
-    public void dbUpdateSellBook(SellBook sb) {
+    public void dbUpdateSellBook(SellBook sellBook) {
         Session session = sessionFactory.getCurrentSession();
-        session.update(sb);
+        session.update(sellBook);
     }
 }

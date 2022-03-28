@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- body that will be in template -->
+    <definition name="patientInfo" extends="tiles">
+        <put-attribute name="title"
+            value="Patient Registratoin" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/patientInfo/patientInfo.jsp" />
+    </definition>
+    <definition name="patientInfoView" extends="tiles">
+        <put-attribute name="title"
+            value="Patient Lists" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/patientInfo/patientInfoView.jsp" />
+    </definition>
+    
+    <definition name="patientMedicalRecord" extends="tiles">
+        <put-attribute name="title"
+            value="Patient Medical Record" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/patientMedicalRecord/patientMedicalRecord.jsp" />
+    </definition>
+    <definition name="patientMedicalRecordView" extends="tiles">
+        <put-attribute name="title"
+            value="Patient Medical Record List" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/patientMedicalRecord/patientMedicalRecordView.jsp" />
+    </definition>
+    
+    <definition name="doctor" extends="tiles">
+        <put-attribute name="title"
+            value="Doctor Registration" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/doctor/doctorregistration.jsp" />
+    </definition>
+    <definition name="doctorView" extends="tiles">
+        <put-attribute name="title"
+            value="Doctor Lists" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/doctor/doctorview.jsp" />
+    </definition>
+
+    <definition name="receptionist" extends="tiles">
+        <put-attribute name="title"
+            value="Receptionist Registration" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/receptionist/receptionistregistration.jsp" />
+    </definition>
+    <definition name="receptionistView" extends="tiles">
+        <put-attribute name="title"
+            value="Receptionist Lists" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/receptionist/viewreceptionistlist.jsp" />
+    </definition>
+
+    <definition name="booking" extends="tiles">
+        <put-attribute name="title"
+            value="Booking" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/booking/booking.jsp" />
+    </definition>
+    <definition name="bookingView" extends="tiles">
+        <put-attribute name="title"
+            value="Booking Lists" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/booking/bookingView.jsp" />
+    </definition>
+    
+      <!-- Result Page -->
+    <definition name="confirm" extends="tiles">
+        <put-attribute name="title"
+            value="Confirm Page" />
+        <put-attribute name="body"
+            value="/WEB-INF/pages/common/confirmPage.jsp" />
+    </definition>
+</tiles-definitions>
+

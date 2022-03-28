@@ -38,7 +38,7 @@ public class SellBook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private Integer sbid;
+    private Integer sellbid;
     /**
      * <h2>bid</h2>
      * <p>
@@ -54,7 +54,7 @@ public class SellBook {
      * </p>
      */
     @Column(name = "Date")
-    private String sbdate;
+    private String sellbdate;
     /**
      * <h2>sbquan</h2>
      * <p>
@@ -62,7 +62,7 @@ public class SellBook {
      * </p>
      */
     @Column(name = "Quantity")
-    private Integer sbquan;
+    private Integer sellbquantity;
     /**
      * <h2>sbtprice</h2>
      * <p>
@@ -70,7 +70,7 @@ public class SellBook {
      * </p>
      */
     @Column(name = "Price")
-    private Integer sbtprice;
+    private Integer sellbtprice;
 
     /**
      * <h2>Constructor for SellBook</h2>
@@ -80,12 +80,12 @@ public class SellBook {
      * 
      * @param sbForm SellBookForm
      */
-    public SellBook(SellBookForm sbForm) {
+    public SellBook(SellBookForm sellBookForm) {
         super();
-        this.sbid = sbForm.getSbid();
-        this.bid = sbForm.getBid();
-        this.sbdate = sbForm.getSbdate();
-        this.sbquan = sbForm.getSbquan();
-        this.sbtprice = sbForm.getSbtprice();
+        this.sellbid = sellBookForm.getSellbid();
+        this.bid = sellBookForm.getBid();
+        this.sellbdate = sellBookForm.getSellbdate();
+        this.sellbquantity = sellBookForm.getSellbquantity();
+        this.sellbtprice = sellBookForm.getSellbtprice();
     }
 }

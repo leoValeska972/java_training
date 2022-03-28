@@ -27,13 +27,13 @@ import ojt.bookstore.app.web.form.SellBookForm;
 @Controller
 public class SellBookController {
     /**
-     * <h2>sbService</h2>
+     * <h2>sellBookService</h2>
      * <p>
-     * sbService
+     * sellBookService
      * </p>
      */
     @Autowired
-    private SellBookService sbService;
+    private SellBookService sellBookService;
     /**
      * <h2>messageSource</h2>
      * <p>
@@ -58,28 +58,30 @@ public class SellBookController {
      * Insert Sold Book
      * </p>
      *
-     * @param sbForm SellBookForm
-     * @param br     BindingResult
+     * @param sellBookForm SellBookForm
+     * @param br           BindingResult
      * @return
      * @return ModelAndView
      */
     @RequestMapping(value = "/addSellBook", method = RequestMethod.POST)
-    public ModelAndView addSellBook(@Valid @ModelAttribute("sbForm") SellBookForm sbForm, BindingResult br) {
+    public ModelAndView addSellBook(@Valid @ModelAttribute("sellBookForm") SellBookForm sellBookForm,
+            BindingResult br) {
         ModelAndView mv = new ModelAndView();
         if (br.hasErrors()) {
             mv.setViewName("sellbook");
-            mv.addObject("sbForm", sbForm);
-            mv.addObject("sbList", sbService.doListSellBooks());
+            mv.addObject("sellBookForm", sellBookForm);
+            mv.addObject("sellBookList", sellBookService.doListSellBooks());
             return mv;
         }
-        if ((sbForm.getSbid() == null || sbForm.getSbid() == 0)
-                && sbService.doGetBookId(sbForm.getBid()) == sbForm.getBid()) {
-            int quan = sbService.doCheckQuan(sbForm.getBid(), sbForm.getSbquan());
+        if ((sellBookForm.getSellbid() == null || sellBookForm.getSellbid() == 0)
+                && sellBookService.doGetBookId(sellBookForm.getBid()) == sellBookForm.getBid()) {
+            int quan = sellBookService.doCheckQuan(sellBookForm.getBid(), sellBookForm.getSellbquantity());
             if (quan >= 0) {
-                sbService.doAddSellBook(sbForm);
+                sellBookService.doAddSellBook(sellBookForm);
                 session.setAttribute("errorMsg", messageSource.getMessage("M_SC_0001", null, null));
             } else {
-                session.setAttribute("errorMsg", "Only " + sbService.doGetQuan(sbForm.getBid()) + " books remaining");
+                session.setAttribute("errorMsg",
+                        "Only " + sellBookService.doGetQuan(sellBookForm.getBid()) + " books remaining");
             }
         } else {
             session.setAttribute("errorMsg", "There is no such book");
@@ -100,8 +102,8 @@ public class SellBookController {
     @RequestMapping(value = "/sellbooks", method = RequestMethod.GET)
     public ModelAndView listSellBooks() {
         ModelAndView mv = new ModelAndView("sellbook");
-        mv.addObject("sbForm", new SellBookForm());
-        mv.addObject("sbList", sbService.doListSellBooks());
+        mv.addObject("sellBookForm", new SellBookForm());
+        mv.addObject("sellBookList", sellBookService.doListSellBooks());
         return mv;
     }
 

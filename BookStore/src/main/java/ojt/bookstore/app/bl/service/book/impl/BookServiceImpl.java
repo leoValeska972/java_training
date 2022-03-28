@@ -159,13 +159,13 @@ public class BookServiceImpl implements BookService {
             Cell cellName = rowi.createCell(++k);
             cellName.setCellValue(blist.get(i - 1).getBname());
             Cell cellAuthor = rowi.createCell(++k);
-            cellAuthor.setCellValue(blist.get(i - 1).getBauth());
+            cellAuthor.setCellValue(blist.get(i - 1).getBauthor());
             Cell cellPublisher = rowi.createCell(++k);
-            cellPublisher.setCellValue(blist.get(i - 1).getBpub());
+            cellPublisher.setCellValue(blist.get(i - 1).getBpublisher());
             Cell cellISBN = rowi.createCell(++k);
             cellISBN.setCellValue(blist.get(i - 1).getBisbn());
             Cell cellQuantity = rowi.createCell(++k);
-            cellQuantity.setCellValue(blist.get(i - 1).getBquan());
+            cellQuantity.setCellValue(blist.get(i - 1).getBquantity());
             Cell cellPrice = rowi.createCell(++k);
             cellPrice.setCellValue(blist.get(i - 1).getBprice());
         }
@@ -207,13 +207,13 @@ public class BookServiceImpl implements BookService {
             Cell cellName = row.getCell(1);
             book.setBname(cellName.getStringCellValue());
             Cell cellAuthor = row.getCell(2);
-            book.setBauth(cellAuthor.getStringCellValue());
+            book.setBauthor(cellAuthor.getStringCellValue());
             Cell cellPublisher = row.getCell(3);
-            book.setBpub(cellPublisher.getStringCellValue());
+            book.setBpublisher(cellPublisher.getStringCellValue());
             Cell cellISBN = row.getCell(4);
             book.setBisbn((int) cellISBN.getNumericCellValue());
             Cell cellQuantity = row.getCell(5);
-            book.setBquan((int) cellQuantity.getNumericCellValue());
+            book.setBquantity((int) cellQuantity.getNumericCellValue());
             Cell cellPrice = row.getCell(6);
             book.setBprice((int) cellPrice.getNumericCellValue());
             book.setFlag(1);

@@ -46,6 +46,12 @@ public class BookDaoImpl implements BookDao {
      */
     private static final String UPDATE_BOOK_QUANTITY_HQL = "UPDATE Book set Quantity = :quan  where id = :bid";
 
+    /**
+     * <h2>DELETE_BOOK_HQL</h2>
+     * <p>
+     * DELETE_BOOK_HQL
+     * </p>
+     */
     private static final String DELETE_BOOK_HQL = "UPDATE Book set Flag = 0  where id = :bid";
 
     /**
@@ -133,6 +139,5 @@ public class BookDaoImpl implements BookDao {
     @Override
     public void dbDeleteBook(int id) {
         sessionFactory.getCurrentSession().createQuery(DELETE_BOOK_HQL).setParameter("bid", id).executeUpdate();
-
     }
 }

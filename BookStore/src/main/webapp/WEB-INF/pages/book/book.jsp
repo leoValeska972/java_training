@@ -35,14 +35,14 @@
         </tr>
         <tr>
           <td>Author :</td>
-          <td><form:input path="bauth" required="required"
-              class="textb" /><br> <form:errors path="bauth"
+          <td><form:input path="bauthor" required="required"
+              class="textb" /><br> <form:errors path="bauthor"
               class="error" /></td>
         </tr>
         <tr>
           <td>Publisher :</td>
-          <td><form:input path="bpub" required="required"
-              class="textb" /><br> <form:errors path="bpub"
+          <td><form:input path="bpublisher" required="required"
+              class="textb" /><br> <form:errors path="bpublisher"
               class="error" /></td>
         </tr>
         <tr>
@@ -54,9 +54,9 @@
 
         <tr>
           <td>Quantity :</td>
-          <td><form:input type="number" path="bquan"
+          <td><form:input type="number" path="bquantity"
               required="required" class="textb" /><br> <form:errors
-              path="bquan" class="error" /></td>
+              path="bquantity" class="error" /></td>
         </tr>
         <tr>
           <td>Price :</td>
@@ -108,10 +108,10 @@
         <tr>
           <td align="center">${book.bid}</td>
           <td align="left">${book.bname}</td>
-          <td align="left">${book.bauth}</td>
-          <td align="left">${book.bpub}</td>
+          <td align="left">${book.bauthor}</td>
+          <td align="left">${book.bpublisher}</td>
           <td align="left">${book.bisbn}</td>
-          <td align="right">${book.bquan}</td>
+          <td align="right">${book.bquantity}</td>
           <td align="right">${book.bprice}</td>
           <td align="center"><a
             href="<c:url value='editBook/${book.bid}' />">Edit</a></td>

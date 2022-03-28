@@ -54,7 +54,7 @@ public class Book {
      * </p>
      */
     @Column(name = "Author")
-    private String bauth;
+    private String bauthor;
     /**
      * <h2>bpub</h2>
      * <p>
@@ -68,7 +68,7 @@ public class Book {
      * </p>
      */
     @Column(name = "Publisher")
-    private String bpub;
+    private String bpublisher;
     /**
      * <h2>bisbn</h2>
      * <p>
@@ -84,7 +84,7 @@ public class Book {
      * </p>
      */
     @Column(name = "Quantity")
-    private Integer bquan;
+    private Integer bquantity;
     /**
      * <h2>bprice</h2>
      * <p>
@@ -93,8 +93,8 @@ public class Book {
      */
     @Column(name = "Price")
     private Integer bprice;
-    
-    @Column(name="Flag")
+
+    @Column(name = "Flag")
     private Integer flag;
 
     /**
@@ -109,10 +109,10 @@ public class Book {
         super();
         this.bid = bookForm.getBid();
         this.bname = bookForm.getBname();
-        this.bauth = bookForm.getBauth();
-        this.bpub = bookForm.getBpub();
+        this.bauthor = bookForm.getBauthor();
+        this.bpublisher = bookForm.getBpublisher();
         this.bisbn = bookForm.getBisbn();
-        this.bquan = bookForm.getBquan();
+        this.bquantity = bookForm.getBquantity();
         this.bprice = bookForm.getBprice();
     }
 }

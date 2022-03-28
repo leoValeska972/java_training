@@ -40,14 +40,14 @@ public class BookDTO {
      * bauth
      * </p>
      */
-    private String bauth;
+    private String bauthor;
     /**
      * <h2>bpub</h2>
      * <p>
      * bpub
      * </p>
      */
-    private String bpub;
+    private String bpublisher;
     /**
      * <h2>bisbn</h2>
      * <p>
@@ -61,7 +61,7 @@ public class BookDTO {
      * bquan
      * </p>
      */
-    private Integer bquan;
+    private Integer bquantity;
     /**
      * <h2>bprice</h2>
      * <p>
@@ -82,10 +82,10 @@ public class BookDTO {
         super();
         this.bid = book.getBid();
         this.bname = book.getBname();
-        this.bauth = book.getBauth();
-        this.bpub = book.getBpub();
+        this.bauthor = book.getBauthor();
+        this.bpublisher = book.getBpublisher();
         this.bisbn = book.getBisbn();
-        this.bquan = book.getBquan();
+        this.bquantity = book.getBquantity();
         this.bprice = book.getBprice();
     }
 }

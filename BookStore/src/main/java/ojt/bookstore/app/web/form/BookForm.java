@@ -49,7 +49,7 @@ public class BookForm {
     @NotEmpty
     @Pattern(regexp = "^[a-zA-Z_ ]*$")
     @Size(max = 30)
-    private String bauth;
+    private String bauthor;
     /**
      * <h2>bpub</h2>
      * <p>
@@ -59,7 +59,7 @@ public class BookForm {
     @NotEmpty
     @Pattern(regexp = "^[a-zA-Z_ ]*$")
     @Size(max = 30)
-    private String bpub;
+    private String bpublisher;
     /**
      * <h2>bisbn</h2>
      * <p>
@@ -75,7 +75,7 @@ public class BookForm {
      * </p>
      */
     @NotNull
-    private Integer bquan;
+    private Integer bquantity;
     /**
      * <h2>bprice</h2>
      * <p>
